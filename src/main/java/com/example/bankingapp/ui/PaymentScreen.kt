@@ -117,7 +117,7 @@ fun PaymentScreen(
                 onValueChange = { input ->
                     val cleaned = input.uppercase()
                         .filter { it.isLetterOrDigit() || it == '-' }
-                        .take(11)
+                        .take(13)
                     viewModel.updateSwift(cleaned)
                 }
             )
