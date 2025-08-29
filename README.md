@@ -44,6 +44,20 @@ This project is an Android banking app that demonstrates a **reusable Payment Sc
 
 ---
 
+## Screenshots
+
+Domestic Transfer Screen:  
+![Domestic](https://github.com/Leena1666/BankingAppTest/blob/main/Screenshot_20250829_115901.png)
+
+International Transfer Screen:  
+![International](https://github.com/Leena1666/BankingAppTest/blob/main/Screenshot_20250829_115923.png)
+
+Payment Success Message:  
+![Success](https://github.com/Leena1666/BankingAppTest/blob/main/Screenshot_20250829_120630.png)
+
+International Transfer Error (SWIFT Code Validation):  
+![SWIFT Error](https://github.com/Leena1666/BankingAppTest/blob/main/Screenshot_20250829_122822.png)
+
 ## How to Run
 
 1. Clone the repo:  
