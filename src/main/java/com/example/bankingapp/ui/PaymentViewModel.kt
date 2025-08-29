@@ -34,12 +34,8 @@ class PaymentViewModel(
         _uiState.value = _uiState.value.copy(swift = value, error = null)
     }
 
-    fun resetStatus() {
-        _uiState.value = _uiState.value.copy(
-            error = null,
-            success = false,
-            isLoading = false
-        )
+    fun resetFields() {
+        _uiState.value = PaymentUiState()
     }
 
     fun sendPayment(transferType: TransferType) {

@@ -88,8 +88,10 @@ fun PaymentScreen(
             label = "Amount",
             value = amount.text,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-            onValueChange = { newText: String ->
-                val formatted = newText.formatAmount()
+            onValueChange = { newText ->
+                val cleaned = newText.filter { it.isDigit() || it == '.' }
+                viewModel.updateAmount(cleaned)
+                val formatted = cleaned.formatAmount()
                 amount = TextFieldValue(
                     text = formatted,
                     selection = TextRange(formatted.length)
@@ -150,17 +152,7 @@ fun Demo(viewModel: PaymentViewModel) {
                     selected = selectedTabIndex == index,
                     onClick = {
                         selectedTabIndex = index
-
-                        if (index == 0) {
-                            viewModel.updateIban("")
-                            viewModel.updateSwift("")
-                            viewModel.resetStatus()
-                        } else if (index == 1) {
-                            viewModel.updateRecipient("")
-                            viewModel.updateAccount("")
-                            viewModel.updateAmount("")
-                            viewModel.resetStatus()
-                        }
+                        viewModel.resetFields()
                     },
                     text = { Text(title) }
                 )
